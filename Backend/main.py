@@ -34,14 +34,14 @@ class Task(BaseModel):
     status: str
 
 
-# ২. GET - All Tasks 
+# GET - All Tasks 
 @app.get("/api/tasks")
 def get_tasks():
     tasks = fetch_all_tasks()
     return [task_to_dict(task) for task in tasks]
 
 
-# ৩. POST - Add Task 
+# POST - Add Task 
 @app.post("/api/tasks")
 def create_task(task: Task):
     task_id = create_task_db(
@@ -56,7 +56,7 @@ def create_task(task: Task):
     }
 
 
-# ৪. DELETE - Delete Task 
+# DELETE - Delete Task 
 @app.delete("/api/tasks/{task_id}")
 def delete_task(task_id: int):
     deleted_task = delete_task_db(task_id)
@@ -70,7 +70,7 @@ def delete_task(task_id: int):
     }
 
 
-# ৫. PUT - Update Task 
+#  PUT - Update Task 
 @app.put("/api/tasks/{task_id}")
 def update_task(task_id: int, task: Task):
     updated_task = update_task_db(
