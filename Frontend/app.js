@@ -3,7 +3,7 @@ var API = "http://127.0.0.1:8000/api/tasks";
 var allTasks = []; // Cache tasks
 
 // ==============================
-// 1. Get All Tasks
+// Get All Tasks
 // ==============================
 async function getTasks() {
   try {
@@ -18,7 +18,7 @@ async function getTasks() {
 }
 
 // ==============================
-// 2. Show Tasks
+//  Show Tasks
 // ==============================
 function showTasks(tasks) {
   var taskList = document.getElementById("task-list");
@@ -74,7 +74,7 @@ function escapeHtml(text) {
 }
 
 // ==============================
-// // 3. Form Submit Handler (Router)
+// //Form Submit Handler (Router)
 // // ==============================
 function handleFormSubmit(event) {
   if (event) event.preventDefault();
@@ -90,7 +90,7 @@ function handleFormSubmit(event) {
 }
 
 // ==============================
-// 4. Add Task (POST Only)
+//  Add Task (POST Only)
 // ==============================
 async function addTask(event) {
   if (event) event.preventDefault();
@@ -133,7 +133,7 @@ async function addTask(event) {
 }
 
 // ==============================
-// 6. Delete Task
+//  Delete Task
 // ==============================
 async function deleteTask(id) {
   var confirmDelete = confirm("Are you sure you want to delete this task?");
@@ -198,7 +198,7 @@ async function updateTask(event) {
 }
 
 // ==============================
-// 7. Edit Task (Open Modal with Task Data)
+// Edit Task (Open Modal with Task Data)
 // ==============================
 async function editTask(id) {
   var task = allTasks.find(function (t) {
